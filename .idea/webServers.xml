@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b49ac69b-0c14-4638-8736-bbb9c1f424c6" name="admincoin" url="http://103.110.84.119">
+        <fileTransfer rootFolder="/public_html/2021/08/adminCoin" host="103.110.84.119" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

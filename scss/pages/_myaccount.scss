@@ -1,0 +1,87 @@
+.myacc{
+  &__common{
+    &__title{
+      @extend .fz-28;
+      line-height: 1.32;
+      color: #676767;
+      font-family: $font-Segoe-UI;
+    }
+  }
+  &__started{
+    @include media-breakpoint-up('m'){
+      margin-bottom: 51px;
+    }
+    &__title{
+      margin-bottom: 8px;
+      line-height: 1.32;
+      @extend .fz-28;
+      color: #676767;
+      span{
+        font-family: $font-Segoe-UI-Bold;
+      }
+    }
+    &__desc{
+      @extend .fz-14;
+      line-height: 1.36;
+      color: #676767;
+    }
+  }
+  &__market{
+    @include media-breakpoint-up('m'){
+      margin-bottom: 79px;
+    }
+    &__card{
+      border-radius: 10px;
+      box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.05);
+      border: solid 1px #e4e4e4;
+      background-color: #fff;
+      position: relative;
+      padding: 20px;
+      padding-left: 33px;
+      padding-right: 18.6px;
+      padding-bottom: 15px;
+      &__brandName{
+        @extend .fz-17;
+        line-height: 1.29;
+        color: #000;
+      }
+      &__info{
+        @extend .fz-14;
+        color: #cbcbcb;
+      }
+      &__logo{
+        width: 20px;
+      }
+      &__percent{
+        right: 18.6px;
+        top: 18px;
+        font-family: $font-Segoe-UI-Semibold;
+        &.raise{
+          color: #3fc03b;
+        }
+        &.reduce{
+          color: #e86666;
+        }
+        span{
+          @extend .fz-14;
+          line-height: 1.36;
+        }
+      }
+      &__number{
+        margin-top: 9px !important;
+        &__txt1{
+          @extend .fz-33;
+          font-family: $font-Segoe-UI-Semibold;
+          line-height: 1.33;
+          color: #676767;
+          margin-bottom: 2px;
+        }
+        &__txt2{
+          @extend .fz-14;
+          line-height: 1.36;
+          color: #676767;
+        }
+      }
+    }
+  }
+}

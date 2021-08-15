@@ -1,0 +1,31 @@
+.header{
+  background-color: #001c9b !important;
+  &__menu{
+    color: #ffffff;
+  }
+  &__logo{
+    width: 124px;
+  }
+  .uk-navbar-toggle,
+  .uk-navbar-item{
+    @extend .header__navItem;
+  }
+  .uk-navbar-nav{
+    >li{
+      >a{
+        @extend .header__navItem;
+      }
+    }
+  }
+  &__navItem{
+    min-height: 60px;
+  }
+  &__navbarRight{
+    &__flag{
+      border: 1px solid #ffffff;
+    }
+  }
+}
+.sidebar{
+
+}
