@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>BASE - <?= /** @var TYPE_NAME  */
+    <title><?= /** @var TYPE_NAME  */
         (isset($data['title'])) ? $data['title'] : ''; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <!--CSS-->
@@ -17,14 +17,15 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=<?php echo(time()) ?>"></script>
 </head>
 <body class="">
-<section id="app" class="uk-height-viewport uk-offcanvas-content uk-overflow-hidden uk-position-relative">
+<!--app-->
+<div id="app" class="uk-height-viewport uk-offcanvas-content uk-overflow-hidden uk-position-relative">
 <nav id="header" class="uk-navbar-container header" uk-navbar>
 
     <div class="uk-navbar-left">
-        <a class="uk-navbar-toggle header__menu" uk-navbar-toggle-icon href="#"></a>
+        <a id="btn" class="uk-navbar-toggle header__menu" uk-navbar-toggle-icon href="#"></a>
         <a href="" class="uk-navbar-item uk-logo uk-padding-remove-left"><img class="header__logo" src="images/SIB_Logo-16.png" alt=""></a>
     </div>
 
@@ -52,55 +53,59 @@
 
 </nav>
 <div uk-height-viewport="offset-top: true" class="uk-grid-collapse uk-grid-match" uk-grid>
-    <aside class="sidebar uk-width-auto">
-        <div style="width: 190px" class="uk-card uk-card-default">
-            <ul class="uk-nav uk-nav-default">
+    <div class="sidebar uk-width-auto open">
+        <div class="uk-card uk-card-default sidebar__card">
+            <ul class="uk-nav uk-nav-default sidebar__nav">
                 <?php
                 $data = array(
                     array(
                         'name' => 'Home',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Home.svg',
                     ),
                     array(
                         'name' => 'My account',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Account.svg',
                     ),
                     array(
                         'name' => 'Wallet',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Wallet.svg',
                     ),
                     array(
                         'name' => 'Investment',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Investment.svg',
                     ),
                     array(
                         'name' => 'Commission',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Investment.svg',
                     ),
                     array(
                         'name' => 'Security',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Security.svg',
                     ),
                     array(
                         'name' => 'Parnership',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Partnership.svg',
                     ),
                     array(
                         'name' => 'Setting',
-                        'icon' => '',
+                        'icon' => 'images/menu-svg/Setting.svg',
                     ),
                 );
                 foreach ($data as $k => $v): ?>
-                <li>
-                    <a href="#">
-                        <img src="" alt="">
-                        <span><?= $v['name'] ?></span>
+                <li class="<?= ($k == 1) ? 'uk-active':'' ?>">
+                    <a href="#" class="uk-link-toggle sidebar__nav__a">
+                        <div class="uk-flex-middle uk-grid-small" uk-grid>
+                            <div class="uk-width-auto">
+                                <div class="sidebar__nav__img"><img class="uk-responsive-width" src="<?= $v['icon'] ?>" alt=""></div>
+                            </div>
+                            <div class="uk-width-expand"><span class="sidebar__nav__txt"><?= $v['name'] ?></span></div>
+                        </div>
                     </a>
-                    <span class="uk-tooltip"><?= $v['name'] ?></span>
+                    <span class="sidebar__nav__tooltip uk-tooltip"><?= $v['name'] ?></span>
                 </li>
                 <?php endforeach; ?>
             </ul>
         </div>
-    </aside>
+    </div>
     <div class="uk-width-expand">
         <div class="uk-overflow-auto">

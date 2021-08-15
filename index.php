@@ -1,4 +1,4 @@
-<?php $data["title"] = "Trang chủ"; ?>
+<?php $data["title"] = "My Account"; ?>
 <?php $is_home = true; ?>
 <?php require "template-parts/layouts/header.php"; ?>
 <div class="uk-container uk-container-expand">
@@ -16,7 +16,8 @@
                 <?php for ($i=1;$i<=4;$i++): ?>
                 <div>
                     <div class="uk-card uk-card-default uk-card-body myacc__market__card">
-                        <div class="uk-position-top-right myacc__market__card__percent <?= ($i%2==0)? 'raise':'reduce' ?>">
+                        <div class="uk-position-top-right myacc__market__card__percent <?= ($i%2!==0)? 'raise':'reduce' ?>">
+                            <img class="myacc__market__card__percent__img" src="<?= ($i%2!==0)? 'images/arrow/Icon1 feather-arrow-up-right@2x.png':'images/arrow/Icon feather-arrow-up-right@2x.png' ?>" alt="">
                             <span class="">2.06%</span>
                         </div>
                         <div class="uk-child-width-auto uk-grid-8 uk-flex-middle" uk-grid>
@@ -76,6 +77,44 @@
             </div>
         </div>
         <!--/Market overview-->
+
+        <!--Investment-->
+        <div class="uk-margin myacc__investment">
+            <h2 class="uk-h2 myacc__common__title">Investment</h2>
+            <div class="uk-child-width-1-2@m uk-grid-16-m" uk-grid>
+                <?php
+                $data = array(
+                    array(
+                        'title' => 'My invest',
+                        'num1' => '1,000,000',
+                        'num2' => '2,000,402.02234',
+                    ),
+                    array(
+                        'title' => 'total community invest',
+                        'num1' => '10,203,030,864.5466',
+                        'num2' => '87,342,031,402.02334',
+                    ),
+                );
+                foreach ($data as $k => $v): ?>
+                <div>
+                    <h5 class="uk-h5 uk-text-uppercase myacc__investment__title"><?= $v['title'] ?></h5>
+                    <div class="uk-card uk-card-default uk-card-body myacc__investment__card">
+                        <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
+                            <div>
+                                <span class="myacc__investment__card__txt1"><?= $v['num1'] ?></span>
+                                <span class="myacc__investment__card__txt2">XLMS</span>
+                            </div>
+                            <div>
+                                <span class="myacc__investment__card__txt1 myacc__investment__card__txt1--green"><?= $v['num2'] ?></span>
+                                <span class="myacc__investment__card__txt2">USDT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <!--/Investment-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>

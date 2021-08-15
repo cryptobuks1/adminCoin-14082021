@@ -1,6 +1,7 @@
 </div>
 </div>
 </div>
-</section>
+</div>
+<!--/app-->
 </body>
 </html>
