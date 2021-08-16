@@ -99,6 +99,7 @@
                 <div>
                     <h5 class="uk-h5 uk-text-uppercase myacc__investment__title"><?= $v['title'] ?></h5>
                     <div class="uk-card uk-card-default uk-card-body myacc__investment__card">
+                        <span class="uk-position-center myacc__investment__card__txt3">≈</span>
                         <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
                             <div>
                                 <span class="myacc__investment__card__txt1 uk-text-middle"><?= $v['num1'] ?></span>
@@ -140,6 +141,7 @@
                     <div>
                         <h5 class="uk-h5 uk-text-uppercase myacc__investment__title"><?= $v['title'] ?></h5>
                         <div class="uk-card uk-card-default uk-card-body myacc__investment__card">
+                            <span class="uk-position-center myacc__investment__card__txt3">≈</span>
                             <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
                                 <div>
                                     <span class="myacc__investment__card__txt1 uk-text-middle"><?= $v['num1'] ?></span>
@@ -202,8 +204,135 @@
         <!--/Asset-->
 
         <!--Community Stellar Lumens S-->
+        <div class="uk-margin myacc__Community">
+            <h2 class="uk-h2 myacc__common__title">Community Stellar Lumens S</h2>
+            <div class="uk-child-width-1-2@m uk-grid-16-m" uk-grid>
+                <?php
+                $data = array(
+                    array(
+                        'title' => 'total community invest',
+                        'num1' => '1,000,000',
+                        'num2' => '2,000,402.02234',
+                    ),
+                    array(
+                        'title' => 'YOUR LEVEL',
+                        'num1' => '10,203,030,864.5466',
+                        'num2' => '87,342,031,402.02334',
+                    ),
+                );
+                foreach ($data as $k => $v): ?>
+                    <div>
+                        <h5 class="uk-h5 uk-text-uppercase myacc__investment__title"><?= $v['title'] ?></h5>
+                        <?php if ($k==0): ?>
+                        <div class="uk-card uk-card-default uk-card-body myacc__investment__card">
+                            <span class="uk-position-center myacc__investment__card__txt3">≈</span>
+                            <div class="uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
+                                <div>
+                                    <span class="myacc__investment__card__txt1 uk-text-middle"><?= $v['num1'] ?></span>
+                                    <span class="myacc__investment__card__txt2 uk-text-middle">XLMS</span>
+                                </div>
+                                <div>
+                                    <span class="myacc__investment__card__txt1 myacc__investment__card__txt1--green uk-text-middle"><?= $v['num2'] ?></span>
+                                    <span class="myacc__investment__card__txt2 uk-text-middle">USDT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
 
+                        <?php if ($k==1): ?>
+                        <div class="uk-child-width-1-2@m uk-grid-16-m" uk-grid>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body myacc__investment__card">
+                                    <div class="uk-position-relative uk-display-inline-block myacc__investment__card__star">
+                                        <div class="uk-position-cover uk-text-nowrap uk-overflow-hidden" style="width: <?= (rand(1,100)) ?>%">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="uk-display-inline-block uk-text-nowrap">
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body myacc__investment__card uk-text-center">
+                                    <span class="myacc__investment__card__bannerTxt">BANNER</span>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
         <!--/Community Stellar Lumens S-->
+
+        <!--Stellar Lumens S Price Chart-->
+        <div class="uk-margin myacc__Stellar">
+            <h2 class="uk-h2 myacc__common__title">Stellar Lumens S Price Chart</h2>
+            <div class="uk-display-inline-block myacc__Stellar__filterBox">
+                <?php
+                $data = array('1D','7D','1M','3M','1 YEAR','YTD','ALL TIME');
+                $random = rand(0,count($data));
+                foreach ($data as $k => $v): ?>
+                <a href="" class="myacc__Stellar__filterBox__a <?= ($k == $random)? 'uk-active':'' ?>"><?= $v ?></a>
+                <?php endforeach; ?>
+            </div>
+            <?php
+
+            function generateRandomString($length = 10) {
+                return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+            }
+
+            $RandomString = generateRandomString();  // OR: generateRandomString(24)
+            ?>
+            <canvas id="myChart-<?= $RandomString ?>" width="1595" height="516"></canvas>
+            <script>
+                var ctx = document.getElementById('myChart-<?= $RandomString ?>').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <!--/Stellar Lumens S Price Chart-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>

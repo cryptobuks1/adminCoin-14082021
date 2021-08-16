@@ -90,6 +90,30 @@
       }
     }
   }
+  &__Community{
+    @extend .myacc__investment;
+  }
+  &__Stellar{
+    @extend .myacc__investment;
+    &__filterBox{
+      border-radius: 5px;
+      background-color: #e4e4e4;
+      padding: 6px 12px;
+      padding-bottom: 7px;
+      &__a{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #676767;
+        padding: 4px 7px 5px 6px;
+        &.uk-active{
+          border-radius: 5px;
+          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+          background-color: #fff;
+        }
+      }
+    }
+  }
   &__asset{
     @extend .myacc__investment;
     &__margin{
@@ -152,12 +176,33 @@
       color: #a2a2a2;
       margin: 0;
       margin-bottom: 15px;
+
+      //height: 19px;
     }
     &__card{
       border-radius: 5px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
       padding-right: 20px;
       padding-left: 46px;
+      position: relative;
+      &__star{
+        .fa{
+          @extend .fz-34;
+          color: #001c9b;
+        }
+      }
+      &__bannerTxt{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-28;
+        line-height: 1.32;
+        color: #e4e4e4;
+      }
+      &__txt3{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #a2a2a2;
+      }
       &__txt1{
         font-family: $font-Segoe-UI-Semibold;
         @extend .fz-18;
