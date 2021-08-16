@@ -41,9 +41,7 @@ window.addEventListener("load", ()=>{
         sidebar.classList.remove("open");
     }
 
-    const selectElement = document.querySelector('#my-select1');
 
-    easydropdown(selectElement);
     easydropdown.all();
 });
 

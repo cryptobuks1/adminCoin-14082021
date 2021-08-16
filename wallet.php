@@ -100,25 +100,15 @@
                                 <span class="myacc__asset__table__txt"><?= rand(1,19) ?>,300.23424</span>
                             </td>
                             <td>
-<!--                                <div uk-form-custom="target: > * > span:first-child">-->
-<!--                                    <select>-->
-<!--                                        <option value="">Choose action</option>-->
-<!--                                        <option value="1">Desposit</option>-->
-<!--                                        <option value="2">Withdraw</option>-->
-<!--                                        <option value="3">Transfer</option>-->
-<!--                                        <option value="4">Exchange</option>-->
-<!--                                    </select>-->
-<!--                                    <button class="uk-button uk-button-default uk-button-small wallet__selectOption" type="button" tabindex="-1">-->
-<!--                                        <span></span>-->
-<!--                                        <span uk-icon="icon: chevron-down"></span>-->
-<!--                                    </button>-->
-<!--                                </div>-->
-                                <select name="foo" id="my-select<?= $i ?>">
-                                    <option value="">Select</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
+                                <div class="wallet__selectOption">
+                                    <select name="foo" class="uk-sortable-placeholder">
+                                        <option value="">Choose action</option>
+                                        <option value="1">Desposit</option>
+                                        <option value="2">Withdraw</option>
+                                        <option value="3">Transfer</option>
+                                        <option value="4">Exchange</option>
+                                    </select>
+                                </div>
                             </td>
                         </tr>
                     <?php endfor; ?>

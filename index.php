@@ -164,6 +164,7 @@
                         <th>Total</th>
                         <th>Available</th>
                         <th>USDT Value</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -194,6 +195,17 @@
                         </td>
                         <td>
                             <span class="myacc__asset__table__txt"><?= rand(1,19) ?>,300.23424</span>
+                        </td>
+                        <td>
+                            <div class="wallet__selectOption">
+                                <select name="foo" class="uk-sortable-placeholder">
+                                    <option value="">Choose action</option>
+                                    <option value="1">Desposit</option>
+                                    <option value="2">Withdraw</option>
+                                    <option value="3">Transfer</option>
+                                    <option value="4">Exchange</option>
+                                </select>
+                            </div>
                         </td>
                     </tr>
                     <?php endfor; ?>
