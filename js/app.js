@@ -40,6 +40,11 @@ window.addEventListener("load", ()=>{
     if (window.innerWidth <= 1280){
         sidebar.classList.remove("open");
     }
+
+    const selectElement = document.querySelector('#my-select1');
+
+    easydropdown(selectElement);
+    easydropdown.all();
 });
 
 window.addEventListener('resize', ()=>{

@@ -17,6 +17,7 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+    <script src="assets/easydropdown-4/bundle/easydropdown.js"></script>
     <script src="js/app.js?v=<?php echo(time()) ?>"></script>
 </head>
 <body class="">
