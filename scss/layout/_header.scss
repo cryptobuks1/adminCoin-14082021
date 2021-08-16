@@ -33,6 +33,12 @@
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 49px !important;
+    transition: all .3s;
+    .open &{
+      width: 190px !important;
+    }
   }
   &.open{
     width: 190px;

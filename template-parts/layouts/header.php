@@ -22,7 +22,7 @@
 <body class="">
 <!--app-->
 <div id="app" class="uk-height-viewport uk-offcanvas-content uk-overflow-hidden uk-position-relative">
-<nav id="header" class="uk-navbar-container header" uk-navbar>
+<nav id="header" class="uk-navbar-container header" uk-navbar uk-sticky="">
 
     <div class="uk-navbar-left">
         <a id="btn" class="uk-navbar-toggle header__menu" uk-navbar-toggle-icon href="#"></a>
@@ -54,7 +54,7 @@
 </nav>
 <div uk-height-viewport="offset-top: true" class="uk-grid-collapse uk-grid-match" uk-grid>
     <div class="sidebar uk-width-auto open">
-        <div class="uk-card uk-card-default sidebar__card">
+        <div class="uk-card uk-card-default sidebar__card" uk-sticky="offset: 60">
             <ul class="uk-nav uk-nav-default sidebar__nav">
                 <?php
                 $data = array(
