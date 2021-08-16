@@ -40,7 +40,10 @@
       background-color: #fff;
       position: relative;
       padding: 20px;
-      padding-left: 33px;
+      padding-left: 15px;
+      @include media-breakpoint-up('m'){
+        padding-left: 33px;
+      }
       padding-right: 18.6px;
       padding-bottom: 15px;
       &__brandName{
@@ -100,6 +103,7 @@
       background-color: #e4e4e4;
       padding: 6px 12px;
       padding-bottom: 7px;
+      margin-bottom: 24px;
       &__a{
         font-family: $font-Segoe-UI-Semibold;
         @extend .fz-14;
@@ -183,7 +187,10 @@
       border-radius: 5px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
       padding-right: 20px;
-      padding-left: 46px;
+      padding-left: 15px;
+      @include media-breakpoint-up('m'){
+        padding-left: 46px;
+      }
       position: relative;
       &__star{
         .fa{

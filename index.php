@@ -333,6 +333,65 @@
             </script>
         </div>
         <!--/Stellar Lumens S Price Chart-->
+
+        <!--Stellar Lumens S Investment Chart-->
+        <div class="uk-margin myacc__Stellar">
+            <h2 class="uk-h2 myacc__common__title">Stellar Lumens S Investment Chart</h2>
+            <div class="uk-display-inline-block myacc__Stellar__filterBox">
+                <?php
+                $data = array('1D','7D','1M','3M','1 YEAR','YTD','ALL TIME');
+                $random = rand(0,count($data));
+                foreach ($data as $k => $v): ?>
+                    <a href="" class="myacc__Stellar__filterBox__a <?= ($k == $random)? 'uk-active':'' ?>"><?= $v ?></a>
+                <?php endforeach; ?>
+            </div>
+            <?php
+            $RandomString = generateRandomString();  // OR: generateRandomString(24)
+            ?>
+            <canvas id="myChart-<?= $RandomString ?>" width="1595" height="516"></canvas>
+            <script>
+                var ctx = document.getElementById('myChart-<?= $RandomString ?>').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                <label><input class="uk-checkbox" type="checkbox" checked> USDT</label>
+                <label><input class="uk-checkbox" type="checkbox"> XLMS</label>
+            </div>
+        </div>
+        <!--/Stellar Lumens S Investment Chart-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>

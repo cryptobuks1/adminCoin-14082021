@@ -65,10 +65,12 @@
                     array(
                         'name' => 'My account',
                         'icon' => 'images/menu-svg/Account.svg',
+                        'href' => 'index.php',
                     ),
                     array(
                         'name' => 'Wallet',
                         'icon' => 'images/menu-svg/Wallet.svg',
+                        'href' => 'wallet.php',
                     ),
                     array(
                         'name' => 'Investment',
@@ -93,7 +95,7 @@
                 );
                 foreach ($data as $k => $v): ?>
                 <li class="<?= ($k == 1) ? 'uk-active':'' ?>">
-                    <a href="#" class="uk-link-toggle sidebar__nav__a">
+                    <a href="<?= ($v['href']) ? $v['href'] : '' ?>" class="uk-link-toggle sidebar__nav__a">
                         <div class="uk-flex-middle uk-grid-small" uk-grid>
                             <div class="uk-width-auto">
                                 <div class="sidebar__nav__img"><img class="uk-responsive-width" src="<?= $v['icon'] ?>" alt=""></div>
