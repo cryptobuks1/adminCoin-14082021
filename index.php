@@ -156,7 +156,7 @@
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="uk-card uk-card-default uk-card-body uk-padding-small myacc__asset__marginTop myacc__asset__card uk-overflow-auto">
+            <div class="uk-card uk-card-default uk-card-body uk-padding-small myacc__asset__marginTop myacc__asset__card" uk-toggle="cls: uk-overflow-auto; mode: media; media: (max-width: 959px)">
                 <table class="uk-table uk-table-middle uk-table-divider myacc__asset__table">
                     <thead>
                     <tr>
