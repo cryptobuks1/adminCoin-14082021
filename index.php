@@ -1,5 +1,4 @@
 <?php $data["title"] = "My Account"; ?>
-<?php $is_home = true; ?>
 <?php require "template-parts/layouts/header.php"; ?>
 <div class="uk-container uk-container-expand">
     <div class="uk-section-small">

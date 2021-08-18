@@ -1,0 +1,118 @@
+.edd-body{
+  .wallet__selectOption &{
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: solid 1px #e4e4e4;
+    background-color: #001c9b;
+    text-align: center;
+    padding: 0 6px;
+  }
+  .filterOption &{
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: solid 1px #e4e4e4;
+    background-color: #001c9b;
+    text-align: center;
+    padding: 0 6px;
+  }
+}
+.edd-option-focused{
+  &:not(.edd-option-disabled){
+    .wallet__selectOption &{
+      color: #f6921a;
+    }
+    .filterOption &{
+      color: #f6921a;
+    }
+  }
+}
+.edd-option{
+  .wallet__selectOption &{
+    @extend .fz-12;
+    line-height: 1.92;
+    color: #e4e4e4;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &:nth-child(n+2){
+      border-top: solid 1px rgba(255, 255, 255, 0.29);
+    }
+  }
+  .filterOption &{
+    @extend .fz-12;
+    line-height: 1.92;
+    color: #e4e4e4;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &:nth-child(n+2){
+      border-top: solid 1px rgba(255, 255, 255, 0.29);
+    }
+  }
+}
+.edd-value{
+  .wallet__selectOption &{
+    @extend .fz-12;
+    color: #fff;
+    font-family: $font-Segoe-UI;
+  }
+  .filterOption &{
+    @extend .fz-12;
+    color: #676767;
+    font-family: $font-Segoe-UI;
+  }
+}
+
+
+
+.edd-head{
+  .wallet__selectOption &{
+    border-radius: 5px;
+    border: solid 1px #e4e4e4;
+    background-color: #cbcbcb;
+  }
+  .filterOption &{
+    border-radius: 5px;
+    border: solid 1px #e4e4e4;
+    background-color: #fff;
+  }
+}
+.edd-arrow{
+  &:before{
+    .wallet__selectOption &{
+      display: none;
+    }
+    .filterOption &{
+      display: none;
+    }
+  }
+  .wallet__selectOption &{
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg fill='white' width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='5 7 15 7 10 12'%3E%3C/polygon%3E%3C/svg%3E");
+  }
+  .filterOption &{
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='5 7 15 7 10 12'%3E%3C/polygon%3E%3C/svg%3E");
+  }
+  .edd-root-open &{
+    .wallet__selectOption &{
+      background-image: url("data:image/svg+xml,%3Csvg fill='white' width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='5 13 10 8 15 13'%3E%3C/polygon%3E%3C/svg%3E");
+    }
+    .filterOption &{
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='5 13 10 8 15 13'%3E%3C/polygon%3E%3C/svg%3E");
+    }
+  }
+}
+.edd-root{
+  .filterOption &{
+    @include media-breakpoint-up('m'){
+      min-width: 180px;
+    }
+    max-width: 180px;
+    width: 100%;
+  }
+}

@@ -1,7 +1,6 @@
 <?php $data["title"] = "Wallet"; ?>
-<?php $is_home = true; ?>
 <?php require "template-parts/layouts/header.php"; ?>
-<div class="uk-container">
+<div class="uk-container wallet">
     <div class="uk-section-small">
 
         <div class="uk-margin wallet__btnBox">
@@ -59,7 +58,7 @@
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="uk-card uk-card-default uk-card-body uk-padding-small myacc__asset__marginTop myacc__asset__card uk-overflow-auto">
+            <div class="uk-card uk-card-default uk-card-body uk-padding-small myacc__asset__marginTop myacc__asset__card" uk-toggle="cls: uk-overflow-auto; mode: media; media: (max-width: 959px)">
                 <table class="uk-table uk-table-middle uk-table-divider myacc__asset__table">
                     <thead>
                     <tr>
@@ -117,6 +116,123 @@
             </div>
         </div>
         <!--/Asset-->
+
+        <!--Transaction History-->
+        <div class="uk-margin wallet__Transaction">
+            <h2 class="uk-h2 myacc__common__title">Transaction History</h2>
+            <div class="wallet__Transaction__filter">
+                <div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small uk-grid-20-m" uk-grid>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Type</option>
+                                <option value="1">Desposit</option>
+                                <option value="2">Withdraw</option>
+                                <option value="3">Transfer</option>
+                                <option value="4">Exchange</option>
+                                <option value="5">Received</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Asset</option>
+                                <option value="1">BTC</option>
+                                <option value="2">ETH</option>
+                                <option value="3">USDT</option>
+                                <option value="4">XLM</option>
+                                <option value="5">XLMS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Status</option>
+                                <option value="1">Completed</option>
+                                <option value="2">Pending</option>
+                                <option value="3">Cancel</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wallet__Transaction__link">
+                <div class="uk-child-width-auto uk-grid-13" uk-grid>
+                    <div>
+                        <a href="" class="wallet__Transaction__link__txt1 wallet__Transaction__link__txt">Deposit hasn't arrived? Click here</a>
+                    </div>
+                    <div>
+                        <a href="" class="wallet__Transaction__link__txt2 wallet__Transaction__link__txt">
+                            <span uk-icon="icon: push; ratio: 1"></span>
+                            Export Deposit History
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card uk-card-default uk-card-body uk-padding-small myacc__asset__card" uk-toggle="cls: uk-overflow-auto; mode: media; media: (max-width: 959px)">
+                <table class="uk-table uk-table-middle uk-table-divider myacc__asset__table">
+                    <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>type</th>
+                        <th>asset</th>
+                        <th>amount</th>
+                        <th>STATUS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $status=array('Completed','Pending','Cancel');
+                    ?>
+                    <?php for ($i=0;$i<=8;$i++): ?>
+                        <tr>
+                            <td>
+                                <span class="myacc__asset__table__txt">20-07-2020 13:30</span>
+                            </td>
+                            <td>
+                                <span class="myacc__asset__table__txt">Deposit</span>
+                            </td>
+                            <td>
+                                <div class="uk-child-width-auto uk-flex-middle uk-grid-5" uk-grid>
+                                    <div>
+                                        <img style="width: 16px" src="images/Coins/USDT Logo@2x.png" alt="">
+                                    </div>
+                                    <div>
+                                        <span class="wallet__Transaction__txtAsset">USDT</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="wallet__Transaction__txtaMount">15,000</span>
+                            </td>
+                            <td>
+                                <?php if ($status[array_rand($status)] === 'Completed'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #3fc03b;">Completed</span>
+                                <?php elseif ($status[array_rand($status)] === 'Pending'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #f6b64a;">Pending</span>
+                                <?php elseif ($status[array_rand($status)] === 'Cancel'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #e86666;">Cancel</span>
+                                <?php else: ?>
+                                    <span class="wallet__Transaction__txtStatus">N/A</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/Transaction History-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>

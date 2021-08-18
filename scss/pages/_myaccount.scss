@@ -120,8 +120,18 @@
   }
   &__asset{
     @extend .myacc__investment;
+    .wallet &{
+      @include media-breakpoint-up('m'){
+        margin-bottom: 45px !important;
+      }
+    }
     &__margin{
       margin-top: 29px !important;
+      .wallet &{
+        @include media-breakpoint-up('m'){
+          margin-top: 51px !important;
+        }
+      }
     }
     &__btnShow{
       text-transform: inherit;
@@ -136,6 +146,9 @@
     &__card{
       border-radius: 5px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+      &:focus{
+        outline: none;
+      }
     }
     &__table{
       &__txt{
@@ -164,6 +177,13 @@
             @extend .fz-14;
             line-height: 1.36;
             color: #a2a2a2;
+          }
+        }
+      }
+      tbody{
+        tr{
+          &:not(:first-child){
+            border-top: 1px dashed #e4e4e4;
           }
         }
       }
