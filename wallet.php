@@ -6,7 +6,7 @@
         <div class="uk-margin wallet__btnBox">
             <div class="uk-grid-small uk-child-width-1-2 uk-child-width-auto@s uk-grid-23-m" uk-grid>
                 <div>
-                    <a href="" class="uk-button uk-button-primary wallet__btnBox__btn">Desposit</a>
+                    <a href="desposit.php" class="uk-button uk-button-primary wallet__btnBox__btn">Desposit</a>
                 </div>
                 <div>
                     <a href="" class="uk-button uk-button-primary wallet__btnBox__btn">Withdraw</a>

@@ -1,0 +1,243 @@
+.desposit{
+  &__title{
+    @extend .myacc__common__title;
+    font-family: $font-Segoe-UI-Semibold;
+    margin-bottom: 8px;
+  }
+  &__backLink{
+    @extend .fz-14;
+    line-height: 1.36;
+    color: #cbcbcb !important;
+    &__icon{
+      color: #cbcbcb;
+    }
+  }
+  &__margin1{
+    @include media-breakpoint-up('m'){
+      margin-bottom: 26px;
+    }
+  }
+  &__boxStep{
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 22px;
+    @include media-breakpoint-up('m'){
+      padding-top: 32px;
+      padding-left: 33px;
+      padding-right: 38px;
+      padding-bottom: 49px;
+    }
+    &__title{
+      @extend .fz-28;
+      line-height: 1.32;
+      color: #676767;
+      font-family: $font-Segoe-UI-Light;
+      margin-bottom: 23px;
+    }
+    &__box1{
+      padding-left: 20px;
+      //border-left: dashed 1px #cbcbcb;
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        top: calc(25px/2);
+        left: 0;
+        bottom: 0;
+        border-left: dashed 1px #cbcbcb;
+        @include media-breakpoint-up('m'){
+          display: none;
+        }
+      }
+      @include media-breakpoint-up('m'){
+        padding-left: 0;
+      }
+    }
+    &__item{
+      &__box{
+        margin-bottom: 15px;
+        @include media-breakpoint-up('m'){
+          margin-bottom: 27px;
+        }
+        &:before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 100%;
+          width: 20px;
+          @include media-breakpoint-up('m'){
+            width: calc(100% + 40px);
+          }
+          border-top: dashed 1px #cbcbcb;
+          .desposit__boxStep__item:first-child &{
+            @include media-breakpoint-up('m'){
+              display: none;
+            }
+          }
+        }
+      }
+      &__badge{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #001c9b;
+        color: #f6f6f6 !important;
+        position: relative;
+        z-index: 100;
+        >*{
+          @extend .fz-18;
+          line-height: 1.33;
+        }
+      }
+      &__name{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #001c9b !important;
+        margin-bottom: 12px;
+      }
+      &__desc{
+        @extend .fz-12;
+        line-height: 1.33;
+        color: #676767;
+      }
+    }
+  }
+  &__selectCoin{
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up('m'){
+      padding-top: 46px;
+      padding-left: 52px;
+      padding-right: 41px;
+      padding-bottom: 82px;
+      margin-bottom: 41px;
+    }
+    &__faqBox{
+      &__title{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-18;
+        line-height: 1.33;
+        color: #676767;
+        margin-bottom: 24px;
+      }
+      &__list{
+        margin: 0;
+        &__icon{
+          color: #cbcbcb;
+        }
+        &__a{
+          @extend .fz-12;
+          line-height: 1.33;
+          color: #676767 !important;
+        }
+      }
+    }
+    &__margin{
+      &:nth-child(n+2){
+        margin-top: 25px !important;
+        @include media-breakpoint-up('m'){
+          margin-top: 56px !important;
+        }
+      }
+    }
+    &__title{
+      font-family: $font-Segoe-UI-Semibold;
+      @extend .fz-18;
+      line-height: 1.33;
+      color: #676767;
+      margin-bottom: 9px;
+    }
+    &__box{
+      @include media-breakpoint-up('m'){
+        padding-left: 10px;
+      }
+      &__label{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #a2a2a2;
+        text-transform: uppercase;
+      }
+      &__desc{
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #676767;
+      }
+      &__select{
+
+      }
+      &__address{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-14;
+        line-height: 1.36;
+        color: #000;
+        &__link{
+          color: #676767;
+        }
+      }
+      &__note{
+        >li{
+          &:before{
+            color: #001c9b;
+          }
+          @extend .fz-14;
+          line-height: 1.36;
+          color: #676767;
+          margin: 0 !important;
+          span{
+            font-family: $font-Segoe-UI-Bold;
+          }
+        }
+      }
+      &__checkInput{
+        display: none;
+        &:checked ~ .desposit__selectCoin__box__cardCheck{
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          border-color: #f6b64a;
+        }
+      }
+      &__cardCheck{
+        //padding: 8.2px 38.6px 9.2px 14.4px;
+        //padding-right: 10px;
+        padding: 6px;
+        border-radius: 5px;
+        border: solid 1px #e4e4e4;
+        background-color: #fff;
+        &:hover{
+          box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+          border-color: #f6b64a;
+        }
+        cursor: pointer;
+        &__name{
+          font-family: $font-Segoe-UI-Semibold;
+          @extend .fz-17;
+          line-height: 1.29;
+          color: #676767;
+        }
+        &__desc{
+          @extend .fz-12;
+          line-height: 1.33;
+          color: #a2a2a2;
+        }
+      }
+    }
+  }
+  &__totalDeposited{
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    @include media-breakpoint-up('m'){
+      padding: 27px 39px 49px 36px;
+      margin-bottom: 41px;
+    }
+  }
+}
