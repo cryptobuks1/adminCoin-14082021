@@ -197,9 +197,145 @@
 
         <!--Total Deposited-->
         <div class="uk-margin uk-card uk-card-body uk-card-default desposit__totalDeposited">
-
+            <h2 class="uk-h2 desposit__totalDeposited__title">Total Deposited</h2>
+            <div class="uk-grid-10 uk-child-width-1-5@m uk-child-width-1-1 uk-grid-match" uk-grid>
+                <?php
+                $data = array('BTC','ETH','USDT','XLM','XLMS');
+                foreach ($data as $k=>$v): ?>
+                <div>
+                    <div class="uk-text-center desposit__totalDeposited__card">
+                        <div class="uk-child-width-auto uk-grid-5 uk-flex-center uk-flex-middle" uk-grid>
+                            <div><img style="width: 24px;" src="images/Coins/Bitcoin-Logo@2x.png" alt=""></div>
+                            <div><span class="desposit__totalDeposited__card__txt"><?= $v ?></span></div>
+                        </div>
+                        <div class="desposit__totalDeposited__card__number">0.2304020202</div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
         <!--/Total Deposited-->
+
+        <!--Recent Deposits-->
+        <div class="uk-margin uk-card uk-card-body uk-card-default">
+            <h2 class="uk-h2 desposit__totalDeposited__title">Recent Deposits</h2>
+            <div class="wallet__Transaction__filter">
+                <div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small uk-grid-20-m" uk-grid>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Asset</option>
+                                <option value="1">BTC</option>
+                                <option value="2">ETH</option>
+                                <option value="3">USDT</option>
+                                <option value="4">XLM</option>
+                                <option value="5">XLMS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Status</option>
+                                <option value="1">Completed</option>
+                                <option value="2">Pending</option>
+                                <option value="3">Cancel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="uk-width-expand@s">
+
+                    </div>
+                    <div>
+                        <a href="" class="desposit__recentDeposits__link">Withdraw hasn't arrived? Click here</a>
+                    </div>
+                </div>
+            </div>
+            <div uk-toggle="cls: uk-overflow-auto; mode: media; media: (max-width: 959px)">
+                <table class="uk-table uk-table-middle uk-table-divider myacc__asset__table">
+                    <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>COIN</th>
+                        <th>amount</th>
+                        <th>Address</th>
+                        <th>TXID</th>
+                        <th>STATUS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $status=array('Completed','Pending','Cancel');
+                    ?>
+                    <?php for ($i=0;$i<=8;$i++): ?>
+                        <tr>
+                            <td>
+                                <span class="myacc__asset__table__txt">20-07-2020 13:30</span>
+                            </td>
+                            <td>
+                                <div class="uk-child-width-auto uk-flex-middle uk-grid-5" uk-grid>
+                                    <div>
+                                        <img style="width: 16px" src="images/Coins/USDT Logo@2x.png" alt="">
+                                    </div>
+                                    <div>
+                                        <span class="wallet__Transaction__txtAsset">USDT</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="wallet__Transaction__txtaMount">15,000</span>
+                            </td>
+                            <td>
+                                <div class="uk-child-width-auto uk-grid-5" uk-grid>
+                                    <div>
+                                        <span class="desposit__recentDeposits__txt">TLw6Vash....7NKasD</span>
+                                    </div>
+                                    <div>
+                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-clone" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="uk-child-width-auto uk-grid-5" uk-grid>
+                                    <div>
+                                        <span class="desposit__recentDeposits__txt">06e917...b9fa69</span>
+                                    </div>
+                                    <div>
+                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-clone" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <?php if ($status[array_rand($status)] === 'Completed'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #3fc03b;">Completed</span>
+                                <?php elseif ($status[array_rand($status)] === 'Pending'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #f6b64a;">Pending</span>
+                                <?php elseif ($status[array_rand($status)] === 'Cancel'): ?>
+                                    <span class="wallet__Transaction__txtStatus" style="color: #e86666;">Cancel</span>
+                                <?php else: ?>
+                                    <span class="wallet__Transaction__txtStatus">N/A</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endfor; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/Recent Deposits-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>
