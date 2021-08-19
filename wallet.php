@@ -9,7 +9,7 @@
                     <a href="desposit.php" class="uk-button uk-button-primary wallet__btnBox__btn">Desposit</a>
                 </div>
                 <div>
-                    <a href="" class="uk-button uk-button-primary wallet__btnBox__btn">Withdraw</a>
+                    <a href="withdraw.php" class="uk-button uk-button-primary wallet__btnBox__btn">Withdraw</a>
                 </div>
                 <div>
                     <a href="" class="uk-button uk-button-primary wallet__btnBox__btn">Transfer</a>
@@ -135,10 +135,9 @@
                         </div>
                     </div>
                     <div>
-                        <div class="filterOption">
-                            <select name="foo" class="uk-sortable-placeholder">
-                                <option value="">Time</option>
-                            </select>
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: calendar"></span>
+                            <input class="uk-input time_range" type="text" placeholder="Time">
                         </div>
                     </div>
                     <div>

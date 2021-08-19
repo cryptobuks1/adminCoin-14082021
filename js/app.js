@@ -43,6 +43,10 @@ window.addEventListener("load", ()=>{
 
 
     easydropdown.all();
+
+    document.querySelector(".time_range").flatpickr({
+        mode: "range"
+    });
 });
 
 window.addEventListener('resize', ()=>{

@@ -1,64 +1,30 @@
-<?php $data["title"] = "Desposit"; ?>
+<?php $data["title"] = "Withdraw Crypto"; ?>
 <?php require "template-parts/layouts/header.php"; ?>
 <div class="uk-container desposit">
     <div class="uk-section-small">
         <div class="uk-margin desposit__margin1">
-            <h2 class="uk-h2 desposit__title">Deposit Crypto</h2>
+            <h2 class="uk-h2 desposit__title">Withdraw Crypto</h2>
             <div>
                 <span class="desposit__backLink__icon" uk-icon="icon: chevron-left; ratio: 0.7"></span>
                 <a href="" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
             </div>
         </div>
 
-        <!--Easy deposit with 4 steps-->
+        <!--Enable Two-Factor Authentication (2FA)-->
         <div class="desposit__boxStep" uk-alert>
             <a class="uk-alert-close" uk-close></a>
-            <h3 class="uk-h3 desposit__boxStep__title">Easy deposit with 4 steps</h3>
-            <div uk-grid>
-                <div class="uk-width-expand">
-                    <!---->
-                    <div class="desposit__boxStep__box1">
-                        <div class="uk-child-width-expand@m" uk-grid>
-                            <?php
-                            $data = array(
-                                array(
-                                    'title' => 'Copy address',
-                                    'desc' => 'Choose the crypto and its network on this page, and copy the deposit address.',
-                                ),
-                                array(
-                                    'title' => 'Initiate a withdrawal',
-                                    'desc' => 'Initiate a withdrawal on the withdrawal platform.',
-                                ),
-                                array(
-                                    'title' => 'Network confirmation',
-                                    'desc' => 'Wait for the blockchain network to confirm your transfer.',
-                                ),
-                                array(
-                                    'title' => 'Deposit successful',
-                                    'desc' => 'After the network confirmation, Binance will credit the crypto for you.',
-                                ),
-                            );
-                            foreach ($data as $k => $v): ?>
-                                <div class="desposit__boxStep__item">
-                                    <div class="uk-position-relative desposit__boxStep__item__box">
-                                        <div class="uk-flex-inline uk-flex-center uk-flex-middle desposit__boxStep__item__badge"><?= $k+1 ?></div>
-                                    </div>
-                                    <div>
-                                        <h5 class="uk-h5 desposit__boxStep__item__name"><?= $v['title'] ?></h5>
-                                        <div class="desposit__boxStep__item__desc"><?= $v['desc'] ?></div>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <!--/-->
-                </div>
+            <div class="uk-flex-middle" uk-grid>
                 <div class="uk-width-auto@m">
-                    <img src="images/tutorial@2x.png" alt="">
+                    <img src="images/Asset 1@2x.png" alt="">
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class="uk-h3">Enable Two-Factor Authentication (2FA)</h3>
+                    <p>Activate at least one more authentication to increase your account security. Funds can be withdrawn once Two-Factor Authentication is enabled.</p>
+                    <button class="uk-button uk-button-primary">Enable Now</button>
                 </div>
             </div>
         </div>
-        <!--/Easy deposit with 4 steps-->
+        <!--/Enable Two-Factor Authentication (2FA)-->
 
         <!--Sellect coin-->
         <div class="uk-margin desposit__selectCoin uk-card uk-card-default uk-card-body uk-form-stacked">
@@ -118,22 +84,20 @@
                         </div>
                     </div>
                     <div class="uk-margin desposit__selectCoin__margin">
-                        <h3 class="uk-h3 desposit__selectCoin__title">Deposit to</h3>
+                        <h3 class="uk-h3 desposit__selectCoin__title">Withdraw to</h3>
                         <div class="desposit__selectCoin__box">
                             <div class="uk-margin">
                                 <label style="margin-bottom: 4px;" class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">NETWORK</label>
-                                <div class="desposit__selectCoin__box__desc">Ensure the network you choose to deposit matches the deposit network, or assets may be lost.</div>
+                                <div class="desposit__selectCoin__box__desc">Ensure the network you choose to deposit matches the withdrawal network, or assets may be lost.</div>
                             </div>
                             <div class="uk-margin">
                                 <div class="desposit__selectCoin__box__select">
                                     <select name="foo" class="uk-sortable-placeholder">
-                                        <option value="">Select Deposit network</option>
-                                        <option value="1">Bitcoin(BTC)</option>
-                                        <option value="2">Ethereum (ERC20)</option>
-                                        <option value="3">Tron (TRC20)</option>
-                                        <option value="4">Stellar Lumens</option>
-                                        <option value="5">Stellar Lumens S</option>
-                                        <option value="6">Sibank</option>
+                                        <option value="">Select withdrawal network</option>
+                                        <option value="1">Desposit</option>
+                                        <option value="2">Withdraw</option>
+                                        <option value="3">Transfer</option>
+                                        <option value="4">Exchange</option>
                                     </select>
                                 </div>
                             </div>
@@ -168,10 +132,10 @@
                         <?php
                         $data = array(
                             'Video Tutorial',
-                            'How to Deposit Crypto Step-by-step Guide',
-                            'Why Has My Deposit Not Been Credited yet?',
-                            'How to Retrieve Crypto Deposit with Wrong or Missing Tag/Memo',
-                            'How to Buy Crypto and Get Started on SIB',
+                            'SIB 2FA Guide / Google 2FA Guide',
+                            'Supported SMS countries',
+                            'Using a YubiKey for Two-Factor Authentication (2FA)',
+                            'Not Receiving SMS Auth Codes',
                         );
                         foreach ($data as $k=>$v): ?>
                         <li>
@@ -197,9 +161,9 @@
         </div>
         <!--/Sellect coin-->
 
-        <!--Total Deposited-->
+        <!--Total Withdraw-->
         <div class="uk-margin uk-card uk-card-body uk-card-default desposit__totalDeposited">
-            <h2 class="uk-h2 desposit__totalDeposited__title">Total Deposited</h2>
+            <h2 class="uk-h2 desposit__totalDeposited__title">Total Withdraw</h2>
             <div class="uk-grid-10 uk-child-width-1-5@m uk-child-width-1-1 uk-grid-match" uk-grid>
                 <?php
                 $data = array('BTC','ETH','USDT','XLM','XLMS');
@@ -216,11 +180,11 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <!--/Total Deposited-->
+        <!--/Total Withdraw-->
 
-        <!--Recent Deposits-->
+        <!--Recent Withdraw-->
         <div class="uk-margin uk-card uk-card-body uk-card-default">
-            <h2 class="uk-h2 desposit__totalDeposited__title">Recent Deposits</h2>
+            <h2 class="uk-h2 desposit__totalDeposited__title">Recent Withdraw</h2>
             <div class="wallet__Transaction__filter">
                 <div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small uk-grid-20-m" uk-grid>
                     <div>
@@ -336,7 +300,7 @@
                 </table>
             </div>
         </div>
-        <!--/Recent Deposits-->
+        <!--/Recent Withdraw-->
     </div>
 </div>
 <?php require "template-parts/layouts/footer.php"; ?>

@@ -64,3 +64,13 @@
     }
   }
 }
+.time_range{
+  @extend .fz-12;
+  //color: #fff;
+  font-family: $font-Segoe-UI;
+
+  border-radius: 5px;
+  border: solid 1px #e4e4e4;
+  background-color: #fff;
+  height: 36px;
+}
