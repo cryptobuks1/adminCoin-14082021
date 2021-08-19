@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <button class="uk-button uk-button-primary withdraw__Authentication__btn">Withdraw Now</button>
+                                <button type="button" uk-toggle="target: #modal-withdraw-popup-step-1" class="uk-button uk-button-primary withdraw__Authentication__btn">Withdraw Now</button>
                             </div>
                         </div>
                     </div>
@@ -330,4 +330,51 @@
         <!--/Recent Withdraw-->
     </div>
 </div>
+
+
+<!-- Wallet/Withdraw - Popup Step 1 -->
+<div id="modal-withdraw-popup-step-1" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body withdraw__modal__body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title withdraw__modal__title">Withdrawal Crypto</h2>
+        <div class="uk-padding-small withdraw__modal__boxNote">
+            <table class="uk-table uk-table-small">
+                <tbody>
+                <tr>
+                    <th><span>Amount</span></th>
+                    <td><span>Revieve 99.98000000 XLM (Network free 0.02 XLM)</span></td>
+                </tr>
+                <tr>
+                    <th><span>Address</span></th>
+                    <td><span>A22KSHJDKJ23NKNA1WPUHL4AJSDNCA5LSFNKDKSKAW92AKSDKMASD</span></td>
+                </tr>
+                <tr>
+                    <th><span>Network</span></th>
+                    <td><span>Stellar Lumens S</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <ul class="uk-list uk-list-circle desposit__selectCoin__box__note">
+            <li>Ensure that the address is correct and on the same network.</li>
+            <li>Transactions cannot be cancelled</li>
+        </ul>
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary withdraw__Authentication__btn uk-width-1-1">Continue</button>
+        </div>
+    </div>
+</div>
+
+<!-- Wallet/Withdraw - Popup Step 2 -->
+<div id="modal-withdraw-popup-step-2" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Default</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+
+<script>
+    UIkit.modal('#modal-withdraw-popup-step-1').show();
+</script>
 <?php require "template-parts/layouts/footer.php"; ?>
