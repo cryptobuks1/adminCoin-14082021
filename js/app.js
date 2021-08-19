@@ -45,7 +45,8 @@ window.addEventListener("load", ()=>{
     easydropdown.all();
 
     document.querySelector(".time_range").flatpickr({
-        mode: "range"
+        mode: "range",
+        dateFormat: "d/m/Y"
     });
 });
 

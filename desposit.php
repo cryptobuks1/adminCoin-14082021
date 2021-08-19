@@ -6,7 +6,7 @@
             <h2 class="uk-h2 desposit__title">Deposit Crypto</h2>
             <div>
                 <span class="desposit__backLink__icon" uk-icon="icon: chevron-left; ratio: 0.7"></span>
-                <a href="" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
+                <a href="wallet.php" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
             </div>
         </div>
 

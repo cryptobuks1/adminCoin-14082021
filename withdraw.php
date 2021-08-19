@@ -1,12 +1,12 @@
 <?php $data["title"] = "Withdraw Crypto"; ?>
 <?php require "template-parts/layouts/header.php"; ?>
-<div class="uk-container desposit">
+<div class="uk-container desposit withdraw">
     <div class="uk-section-small">
         <div class="uk-margin desposit__margin1">
             <h2 class="uk-h2 desposit__title">Withdraw Crypto</h2>
             <div>
                 <span class="desposit__backLink__icon" uk-icon="icon: chevron-left; ratio: 0.7"></span>
-                <a href="" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
+                <a href="wallet.php" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
             </div>
         </div>
 
@@ -17,10 +17,10 @@
                 <div class="uk-width-auto@m">
                     <img src="images/Asset 1@2x.png" alt="">
                 </div>
-                <div class="uk-width-expand">
-                    <h3 class="uk-h3">Enable Two-Factor Authentication (2FA)</h3>
-                    <p>Activate at least one more authentication to increase your account security. Funds can be withdrawn once Two-Factor Authentication is enabled.</p>
-                    <button class="uk-button uk-button-primary">Enable Now</button>
+                <div class="uk-width-1-2@m">
+                    <h3 class="uk-h3 withdraw__Authentication__title">Enable Two-Factor Authentication (2FA)</h3>
+                    <p class="withdraw__Authentication__desc">Activate at least one more authentication to increase your account security. Funds can be withdrawn once Two-Factor Authentication is enabled.</p>
+                    <button class="uk-button uk-button-primary withdraw__Authentication__btn">Enable Now</button>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                         <h3 class="uk-h3 desposit__selectCoin__title">Sellect coin</h3>
                         <div class="desposit__selectCoin__box">
                             <div class="uk-margin">
-                                <label class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">COINS</label>
+                                <label class="uk-hidden uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">COINS</label>
                                 <div class="uk-form-controls">
                                     <div class="uk-child-width-1-2 uk-child-width-expand@m uk-grid-4 uk-grid-match" uk-grid>
                                         <?php
@@ -81,16 +81,29 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label withdraw__selectCoin__label" for="form-stacked-text">
+                                    <span class="withdraw__selectCoin__label__txt1">Available ballance:</span>
+                                    <span class="withdraw__selectCoin__label__txt2">2,000,000.30482</span>
+                                    <span class="withdraw__selectCoin__label__txt3">BTC</span>
+                                </label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-form-large withdraw__selectCoin__input" type="text" placeholder="Enter Amount">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="uk-margin desposit__selectCoin__margin">
                         <h3 class="uk-h3 desposit__selectCoin__title">Withdraw to</h3>
                         <div class="desposit__selectCoin__box">
                             <div class="uk-margin">
-                                <label style="margin-bottom: 4px;" class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">NETWORK</label>
+                                <label style="margin-bottom: 4px;" class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">ADDRESS</label>
                                 <div class="desposit__selectCoin__box__desc">Ensure the network you choose to deposit matches the withdrawal network, or assets may be lost.</div>
                             </div>
-                            <div class="uk-margin">
+                            <div class="uk-margin-small">
+                                <input class="uk-input uk-form-large withdraw__selectCoin__input" type="text" placeholder="Enter address here">
+                            </div>
+                            <div class="uk-margin-small">
                                 <div class="desposit__selectCoin__box__select">
                                     <select name="foo" class="uk-sortable-placeholder">
                                         <option value="">Select withdrawal network</option>
@@ -102,26 +115,40 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">ADdRESS</label>
-                                <div class="uk-form-controls">
-                                    <div class="uk-child-width-auto uk-grid-10" uk-grid>
-                                        <div>
-                                            <span class="desposit__selectCoin__box__address">0x716d9d96d80d8a5164d5b23e2b689b0ed988f87c</span>
-                                        </div>
-                                        <div>
-                                            <a class="desposit__selectCoin__box__address__link" href=""><i class="fa fa-clone" aria-hidden="true"></i></a>
-                                        </div>
-                                        <div>
-                                            <a class="desposit__selectCoin__box__address__link" href=""><i class="fa fa-qrcode" aria-hidden="true"></i></a>
+                                <div uk-grid>
+                                    <div class="uk-width-1-2@m">
+                                        <div class="uk-child-width-1-2@s uk-grid-13" uk-grid>
+                                            <?php
+                                            $data = array(
+                                                array(
+                                                    'txt1' => 'BTC spot ballance',
+                                                    'txt2' => '2.30482 BTC',
+                                                ),
+                                                array(
+                                                    'txt1' => 'Minimum withdrawal',
+                                                    'txt2' => '0 BTC',
+                                                ),
+                                                array(
+                                                    'txt1' => 'Network fee',
+                                                    'txt2' => '0.00000001 BTC',
+                                                ),
+                                                array(
+                                                    'txt1' => '24h remaining limit',
+                                                    'txt2' => '2BTC/2BTC',
+                                                ),
+                                            );
+                                            foreach ($data as $k=>$v): ?>
+                                            <div>
+                                                <div class="withdraw__selectCoin__withdraw__txt1"><?= $v['txt1'] ?></div>
+                                                <div class="withdraw__selectCoin__withdraw__txt2"><?= $v['txt2'] ?></div>
+                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <ul class="uk-list uk-list-circle desposit__selectCoin__box__note">
-                                    <li>Send only BNB to this deposit address.</li>
-                                    <li>Ensure the network is <span>TRC20</span> (Stellar Lumens).</li>
-                                </ul>
+                                <button class="uk-button uk-button-primary withdraw__Authentication__btn">Withdraw Now</button>
                             </div>
                         </div>
                     </div>
