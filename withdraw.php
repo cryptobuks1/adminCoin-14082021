@@ -360,21 +360,63 @@
             <li>Transactions cannot be cancelled</li>
         </ul>
         <div class="uk-margin">
-            <button class="uk-button uk-button-primary withdraw__Authentication__btn uk-width-1-1">Continue</button>
+            <a href="#modal-withdraw-popup-step-2" uk-toggle class="uk-button uk-button-primary withdraw__Authentication__btn uk-width-1-1">Continue</a>
         </div>
     </div>
 </div>
 
 <!-- Wallet/Withdraw - Popup Step 2 -->
 <div id="modal-withdraw-popup-step-2" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
+    <div class="uk-modal-dialog uk-modal-body withdraw__modal__body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
-        <h2 class="uk-modal-title">Default</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h2 class="uk-modal-title withdraw__modal__title">Secutiry verification</h2>
+        <div class="uk-padding-small withdraw__modal__boxNote">
+            <table class="uk-table uk-table-small">
+                <tbody>
+                <tr>
+                    <th><span>Amount</span></th>
+                    <td><span>Revieve 99.98000000 XLM (Network free 0.02 XLM)</span></td>
+                </tr>
+                <tr>
+                    <th><span>Address</span></th>
+                    <td><span>A22KSHJDKJ23NKNA1WPUHL4AJSDNCA5LSFNKDKSKAW92AKSDKMASD</span></td>
+                </tr>
+                <tr>
+                    <th><span>Network</span></th>
+                    <td><span>Stellar Lumens S</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="uk-form-stacked uk-margin">
+            <div class="uk-margin">
+                <label class="uk-form-label withdraw__modal__label" for="form-stacked-text">Email verification code</label>
+                <div class="uk-form-controls">
+                    <div class="uk-position-relative">
+                        <input class="uk-input uk-form-large withdraw__selectCoin__input" id="form-stacked-text" type="text" placeholder="Enter code">
+                        <a href="" class="withdraw__modal__getcode uk-position-center-right uk-position-small">Get code</a>
+                    </div>
+                    <small class="withdraw__modal__smallNote">Enter the 6 digit code revieved by mr.***@gmail.com</small>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label withdraw__modal__label" for="form-stacked-text">Phone verification code</label>
+                <div class="uk-form-controls">
+                    <div class="uk-position-relative">
+                        <input class="uk-input uk-form-large withdraw__selectCoin__input" id="form-stacked-text" type="text" placeholder="Enter code">
+                        <a href="" class="withdraw__modal__getcode uk-position-center-right uk-position-small">Get code</a>
+                    </div>
+                    <small class="withdraw__modal__smallNote">Enter the 6 digit code sent to 975***1619</small>
+                </div>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary withdraw__Authentication__btn uk-width-1-1">Submit</button>
+        </div>
     </div>
 </div>
 
 <script>
-    UIkit.modal('#modal-withdraw-popup-step-1').show();
+    // UIkit.modal('#modal-withdraw-popup-step-2').show();
 </script>
 <?php require "template-parts/layouts/footer.php"; ?>
