@@ -1,0 +1,18 @@
+.transfer{
+  &__totaltransfer{
+    &__btnFilter{
+      text-transform: inherit;
+      min-width: 111px;
+      border-radius: 5px;
+      border: solid 1px #e4e4e4;
+      background-color: #fff;
+      @extend .fz-12;
+      &.uk-active{
+        border-radius: 5px;
+        border: solid 1px #e4e4e4;
+        background-color: #3861fb;
+        color: #ffffff;
+      }
+    }
+  }
+}

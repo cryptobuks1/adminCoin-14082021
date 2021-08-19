@@ -1,30 +1,14 @@
-<?php $data["title"] = "Withdraw Crypto"; ?>
+<?php $data["title"] = "Transfer Crypto"; ?>
 <?php require "template-parts/layouts/header.php"; ?>
 <div class="uk-container desposit withdraw">
     <div class="uk-section-small">
         <div class="uk-margin desposit__margin1">
-            <h2 class="uk-h2 desposit__title">Withdraw Crypto</h2>
+            <h2 class="uk-h2 desposit__title">Transfer Crypto</h2>
             <div>
                 <span class="desposit__backLink__icon" uk-icon="icon: chevron-left; ratio: 0.7"></span>
                 <a href="wallet.php" class="desposit__backLink uk-text-middle uk-link-toggle">Back to your wallet</a>
             </div>
         </div>
-
-        <!--Enable Two-Factor Authentication (2FA)-->
-        <div class="desposit__boxStep" uk-alert>
-            <a class="uk-alert-close" uk-close></a>
-            <div class="uk-flex-middle" uk-grid>
-                <div class="uk-width-auto@m">
-                    <img src="images/Asset 1@2x.png" alt="">
-                </div>
-                <div class="uk-width-1-2@m">
-                    <h3 class="uk-h3 withdraw__Authentication__title">Enable Two-Factor Authentication (2FA)</h3>
-                    <p class="withdraw__Authentication__desc">Activate at least one more authentication to increase your account security. Funds can be withdrawn once Two-Factor Authentication is enabled.</p>
-                    <button class="uk-button uk-button-primary withdraw__Authentication__btn">Enable Now</button>
-                </div>
-            </div>
-        </div>
-        <!--/Enable Two-Factor Authentication (2FA)-->
 
         <!--Sellect coin-->
         <div class="uk-margin desposit__selectCoin uk-card uk-card-default uk-card-body uk-form-stacked">
@@ -34,7 +18,7 @@
                         <h3 class="uk-h3 desposit__selectCoin__title">Sellect coin</h3>
                         <div class="desposit__selectCoin__box">
                             <div class="uk-margin">
-                                <label class="uk-hidden uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">COINS</label>
+                                <label class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">COINS</label>
                                 <div class="uk-form-controls">
                                     <div class="uk-child-width-1-2 uk-child-width-expand@m uk-grid-4 uk-grid-match" uk-grid>
                                         <?php
@@ -83,8 +67,8 @@
                             </div>
                             <div class="uk-margin">
                                 <label class="uk-form-label withdraw__selectCoin__label" for="form-stacked-text">
-                                    <span class="withdraw__selectCoin__label__txt1">Available ballance:</span>
-                                    <span class="withdraw__selectCoin__label__txt2">2,000,000.30482</span>
+                                    <span class="withdraw__selectCoin__label__txt1">Available:</span>
+                                    <span class="withdraw__selectCoin__label__txt2">2.30482</span>
                                     <span class="withdraw__selectCoin__label__txt3">BTC</span>
                                 </label>
                                 <div class="uk-form-controls">
@@ -94,61 +78,45 @@
                         </div>
                     </div>
                     <div class="uk-margin desposit__selectCoin__margin">
-                        <h3 class="uk-h3 desposit__selectCoin__title">Withdraw to</h3>
+                        <h3 class="uk-h3 desposit__selectCoin__title">Transfer to</h3>
                         <div class="desposit__selectCoin__box">
                             <div class="uk-margin">
-                                <label style="margin-bottom: 4px;" class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">ADDRESS</label>
-                                <div class="desposit__selectCoin__box__desc">Ensure the network you choose to deposit matches the withdrawal network, or assets may be lost.</div>
-                            </div>
-                            <div class="uk-margin-small">
-                                <input class="uk-input uk-form-large withdraw__selectCoin__input" type="text" placeholder="Enter address here">
-                            </div>
-                            <div class="uk-margin-small">
-                                <div class="desposit__selectCoin__box__select">
-                                    <select name="foo" class="uk-sortable-placeholder">
-                                        <option value="">Select withdrawal network</option>
-                                        <option value="1">Desposit</option>
-                                        <option value="2">Withdraw</option>
-                                        <option value="3">Transfer</option>
-                                        <option value="4">Exchange</option>
-                                    </select>
+                                <label class="uk-form-label desposit__selectCoin__box__label" for="form-stacked-text">ADDRESS</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-form-large withdraw__selectCoin__input" type="text" placeholder="Enter ID/email address">
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <div uk-grid>
-                                    <div class="uk-width-1-2@m">
-                                        <div class="uk-child-width-1-2@s uk-grid-13" uk-grid>
-                                            <?php
-                                            $data = array(
-                                                array(
-                                                    'txt1' => 'BTC spot ballance',
-                                                    'txt2' => '2.30482 BTC',
-                                                ),
-                                                array(
-                                                    'txt1' => 'Minimum withdrawal',
-                                                    'txt2' => '0 BTC',
-                                                ),
-                                                array(
-                                                    'txt1' => 'Network fee',
-                                                    'txt2' => '0.00000001 BTC',
-                                                ),
-                                                array(
-                                                    'txt1' => '24h remaining limit',
-                                                    'txt2' => '2BTC/2BTC',
-                                                ),
-                                            );
-                                            foreach ($data as $k=>$v): ?>
-                                            <div>
-                                                <div class="withdraw__selectCoin__withdraw__txt1"><?= $v['txt1'] ?></div>
+                                <div class="uk-child-width-1-3@s uk-grid-13" uk-grid>
+                                    <?php
+                                    $data = array(
+                                        array(
+                                            'txt1' => 'Network fee',
+                                            'txt2' => '2.30482 BTC',
+                                        ),
+                                        array(
+                                            'txt1' => 'Minimum withdrawal',
+                                            'txt2' => '0 BTC',
+                                        ),
+                                        array(
+                                            'txt1' => '24h remaining limit',
+                                            'txt2' => '2BTC/2BTC',
+                                        ),
+                                    );
+                                    foreach ($data as $k=>$v): ?>
+                                        <div>
+                                            <div class="withdraw__selectCoin__withdraw__txt1"><?= $v['txt1'] ?></div>
+                                            <?php if ($k==0): ?>
+                                                <div class="withdraw__selectCoin__label__txt2">FREE</div>
+                                            <?php else: ?>
                                                 <div class="withdraw__selectCoin__withdraw__txt2"><?= $v['txt2'] ?></div>
-                                            </div>
-                                            <?php endforeach; ?>
+                                            <?php endif; ?>
                                         </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <button type="button" uk-toggle="target: #modal-withdraw-popup-step-1" class="uk-button uk-button-primary withdraw__Authentication__btn">Withdraw Now</button>
+                                <button type="button" uk-toggle="target: #modal-withdraw-popup-step-1" class="uk-button uk-button-primary withdraw__Authentication__btn">Confirm</button>
                             </div>
                         </div>
                     </div>
@@ -188,9 +156,18 @@
         </div>
         <!--/Sellect coin-->
 
-        <!--Total Withdraw-->
+        <!--Total Transfer-->
         <div class="uk-margin uk-card uk-card-body uk-card-default desposit__totalDeposited">
-            <h2 class="uk-h2 desposit__totalDeposited__title">Total Withdraw</h2>
+            <div uk-grid>
+                <div class="uk-width-expand">
+                    <h2 class="uk-h2 desposit__totalDeposited__title uk-margin-remove">Total Transfer</h2>
+                </div>
+                <div class="uk-width-auto@m">
+                    <a href="" class="uk-button uk-button-default uk-button-small transfer__totaltransfer__btnFilter">All</a>
+                    <a href="" class="uk-button uk-button-default uk-button-small transfer__totaltransfer__btnFilter uk-active">Transfer</a>
+                    <a href="" class="uk-button uk-button-default uk-button-small transfer__totaltransfer__btnFilter">Received</a>
+                </div>
+            </div>
             <div class="uk-grid-10 uk-child-width-1-5@m uk-child-width-1-1 uk-grid-match" uk-grid>
                 <?php
                 $data = array('BTC','ETH','USDT','XLM','XLMS');
@@ -207,17 +184,26 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <!--/Total Withdraw-->
+        <!--/Total Transfer-->
 
-        <!--Recent Withdraw-->
+        <!--Recent Transfers-->
         <div class="uk-margin uk-card uk-card-body uk-card-default">
-            <h2 class="uk-h2 desposit__totalDeposited__title">Recent Withdraw</h2>
+            <h2 class="uk-h2 desposit__totalDeposited__title">Recent Transfers</h2>
             <div class="wallet__Transaction__filter">
                 <div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small uk-grid-20-m" uk-grid>
                     <div>
                         <div class="uk-inline">
                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: calendar"></span>
                             <input class="uk-input time_range" type="text" placeholder="Time">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filterOption">
+                            <select name="foo" class="uk-sortable-placeholder">
+                                <option value="">Type</option>
+                                <option value="1">Transfer</option>
+                                <option value="2">Recieved</option>
+                            </select>
                         </div>
                     </div>
                     <div>
@@ -255,10 +241,10 @@
                     <thead>
                     <tr>
                         <th>Time</th>
+                        <th>TYPE</th>
                         <th>COIN</th>
                         <th>amount</th>
-                        <th>Address</th>
-                        <th>TXID</th>
+                        <th>ID Address</th>
                         <th>STATUS</th>
                     </tr>
                     </thead>
@@ -270,6 +256,9 @@
                         <tr>
                             <td>
                                 <span class="myacc__asset__table__txt">20-07-2020 13:30</span>
+                            </td>
+                            <td>
+                                <span class="myacc__asset__table__txt">Transfer</span>
                             </td>
                             <td>
                                 <div class="uk-child-width-auto uk-flex-middle uk-grid-5" uk-grid>
@@ -287,20 +276,7 @@
                             <td>
                                 <div class="uk-child-width-auto uk-grid-5" uk-grid>
                                     <div>
-                                        <span class="desposit__recentDeposits__txt">TLw6Vash....7NKasD</span>
-                                    </div>
-                                    <div>
-                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                    </div>
-                                    <div>
-                                        <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-clone" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="uk-child-width-auto uk-grid-5" uk-grid>
-                                    <div>
-                                        <span class="desposit__recentDeposits__txt">06e917...b9fa69</span>
+                                        <span class="desposit__recentDeposits__txt">alexpham</span>
                                     </div>
                                     <div>
                                         <a href="" class="desposit__recentDeposits__link1"><i class="fa fa-link" aria-hidden="true"></i></a>
@@ -327,7 +303,7 @@
                 </table>
             </div>
         </div>
-        <!--/Recent Withdraw-->
+        <!--/Recent Transfers-->
     </div>
 </div>
 
@@ -336,7 +312,7 @@
 <div id="modal-withdraw-popup-step-1" uk-modal>
     <div class="uk-modal-dialog uk-modal-body withdraw__modal__body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
-        <h2 class="uk-modal-title withdraw__modal__title">Withdrawal Crypto</h2>
+        <h2 class="uk-modal-title withdraw__modal__title">Transfer Crypto</h2>
         <div class="uk-padding-small withdraw__modal__boxNote">
             <table class="uk-table uk-table-small">
                 <tbody>
@@ -346,7 +322,7 @@
                 </tr>
                 <tr>
                     <th><span>Address</span></th>
-                    <td><span>A22KSHJDKJ23NKNA1WPUHL4AJSDNCA5LSFNKDKSKAW92AKSDKMASD</span></td>
+                    <td><span>ID: alexpham</span></td>
                 </tr>
                 <tr>
                     <th><span>Network</span></th>

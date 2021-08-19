@@ -122,5 +122,10 @@
       @extend .fz-14;
       color: #676767;
     }
+    &__underline{
+      @extend .fz-14;
+      color: #676767;
+      text-decoration: underline;
+    }
   }
 }
