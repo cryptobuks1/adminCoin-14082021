@@ -225,6 +225,9 @@
           @extend .fz-17;
           line-height: 1.29;
           color: #676767;
+          span{
+            color: #3fc03b;
+          }
         }
         &__desc{
           @extend .fz-12;

@@ -15,7 +15,7 @@
                     <a href="transfer.php" class="uk-button uk-button-primary wallet__btnBox__btn">Transfer</a>
                 </div>
                 <div>
-                    <a href="" class="uk-button uk-button-primary wallet__btnBox__btn">Exchange</a>
+                    <a href="exchange.php" class="uk-button uk-button-primary wallet__btnBox__btn">Exchange</a>
                 </div>
             </div>
         </div>

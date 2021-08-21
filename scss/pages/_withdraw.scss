@@ -36,6 +36,9 @@
         @extend .fz-14;
         line-height: 1.36;
         color: #3fc03b;
+        &--c1{
+          color: #f6921a;
+        }
       }
       &__txt3{
         font-family: $font-Segoe-UI-Semibold;
