@@ -56,6 +56,9 @@
     &__txtStatus{
       @extend .fz-14;
       line-height: 1.36;
+      .investment__tooltip__box1 &{
+        @extend .fz-16;
+      }
     }
     &__txtAsset{
       @extend .fz-14;

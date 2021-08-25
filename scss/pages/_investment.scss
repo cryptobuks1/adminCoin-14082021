@@ -1,0 +1,263 @@
+.investment{
+  &__table{
+    &__txt1{
+      font-family: $font-Segoe-UI-Semibold;
+      @extend .fz-20;
+      line-height: 1.35;
+      color: #444fa2;
+      &--c1{
+        color: #53ae94;
+      }
+      .investment__tooltip__box1 &{
+        @extend .fz-18;
+      }
+    }
+    &__detail{
+      @extend .myacc__asset__table__txt;
+    }
+  }
+  &__tooltip{
+    //max-width: inherit;
+    //width: 400px !important;
+    //min-height: 764.7px;
+    padding: 36.9px 32.5px 37.9px 39.5px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    color: #000;
+    &__title{
+      font-family: $font-Segoe-UI-Semibold;
+      @extend .fz-24;
+      line-height: 1.33;
+      color: #676767;
+    }
+    &__box1{
+      border: dashed 1px #e4e4e4;
+      border-left: none;
+      border-right: none;
+      margin-top: 24px;
+      &__table2{
+        border-left: solid 1px #e4e4e4;
+        tr{
+          th,td{
+            padding: 3px 12px;
+            //padding-left: 0;
+          }
+          th{
+            font-family: $font-Segoe-UI;
+            @extend .fz-17;
+            color: #a2a2a2;
+          }
+          td{
+            font-family: $font-Segoe-UI-Semibold;
+            @extend .fz-17;
+            color: #a2a2a2;
+          }
+        }
+      }
+      &__table1{
+        &__td{
+          @extend .investment__tooltip__box1__table1__dc;
+        }
+        &__th{
+          @extend .investment__tooltip__box1__table1__dc;
+          font-family: $font-Segoe-UI-Semibold;
+          @extend .fz-17;
+          color: #a2a2a2;
+        }
+        &__dc{
+          padding: 7px 12px !important;
+          padding-left: 0 !important;
+        }
+      }
+    }
+    &__table3{
+      caption{
+        @extend .fz-12;
+        color: #a2a2a2;
+      }
+      tr{
+        th,td{
+          padding: 9px 12px;
+          padding-left: 0;
+        }
+        th{
+          font-family: $font-Segoe-UI-Semibold;
+          @extend .fz-14;
+          color: #a2a2a2;
+        }
+        td{
+          @extend .fz-12;
+          color: #a2a2a2;
+        }
+      }
+    }
+  }
+  &__packege{
+    &__title{
+      line-height: 1.33;
+      @extend .fz-18;
+      font-family: $font-Segoe-UI-Semibold;
+      text-transform: uppercase;
+      margin-bottom: 21px;
+      .blue &{
+        color: #444fa1;
+      }
+      .green &{
+        color: #3fc03b;
+      }
+    }
+    &__table{
+      &__txt1{
+        @extend .fz-20;
+        line-height: 1.35;
+        color: #676767;
+      }
+      &__txt{
+        line-height: 1.31;
+        @extend .fz-16;
+        font-family: $font-Segoe-UI-Semibold;
+        .green &{
+          color: #3fc03b;
+        }
+      }
+      tr{
+        &:not(:first-child){
+          border-top: 1px dashed #e4e4e4;
+        }
+        td,th{
+          //padding-top: 27px;
+          //padding-bottom: 27px;
+        }
+        td{
+          padding-left: 21px;
+        }
+        th{
+          @extend .fz-18;
+          font-family: $font-Segoe-UI;
+          color: #676767;
+          text-transform: inherit;
+          .blue &{
+            text-align: center;
+            background-color: #f2fdff;
+          }
+          .green &{
+            background-color: #f2fff5;
+          }
+        }
+      }
+    }
+  }
+  &__card{
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    .margin1{
+      margin-top: 48px;
+    }
+    padding-top: 50px;
+    @include media-breakpoint-up('m'){
+      padding: 28px 25px 33px 36px;
+      padding-top: 76px;
+    }
+    &__box1{
+      border-radius: 5px;
+      border: solid 1px #e4e4e4;
+      background-color: #fff;
+      padding: 15px;
+      @include media-breakpoint-up('m'){
+        padding: 21.2px 42px 23.5px 50.2px;
+      }
+      position: relative;
+      &--wallet{
+        @include media-breakpoint-up('m'){
+          padding: 21px 13.5px 19px;
+        }
+      }
+      &--total{
+        @include media-breakpoint-up('m'){
+          padding: 21.2px 40px 23.5px 34.2px;
+        }
+      }
+      &--profit{
+        @include media-breakpoint-up('m'){
+          padding: 21.2px 42px 23.5px 50.2px;
+        }
+      }
+      &__title{
+        top: -34px;
+        @include media-breakpoint-up('m'){
+          top: -48px;
+        }
+        @extend .fz-22;
+        line-height: 1.36;
+        color: #676767;
+      }
+      &__txtNumber{
+        font-family: $font-Segoe-UI-Semibold;
+        @extend .fz-60;
+        line-height: 1.33;
+        color: #444fa1;
+      }
+      &__profit{
+        &__box{
+          >*{
+            &:nth-child(n+2){
+              margin-top: 10px;
+              @include media-breakpoint-up('m'){
+                margin-top: 19.8px;
+              }
+            }
+          }
+        }
+        &__txtLeft{
+          font-family: $font-Segoe-UI-Semibold;
+          @extend .fz-20;
+          line-height: 1.35;
+        }
+        &__img{
+          margin: 0 5px;
+        }
+        &__txtRight{
+          @extend .fz-20;
+          line-height: 1.35;
+          color: #a2a2a2;
+        }
+      }
+      &__wallet{
+        &__txt{
+          line-height: 1.35;
+          @extend .fz-20;
+          &--c1{
+            font-family: $font-Segoe-UI-Semibold;
+            color: #676767;
+          }
+          &--c2{
+            color: #a2a2a2;
+          }
+        }
+        >*{
+          &:nth-child(n+2){
+            margin-top: 10px;
+            @include media-breakpoint-up('m'){
+              margin-top: 26.8px;
+            }
+          }
+        }
+      }
+      &__btn{
+        text-transform: inherit;
+        @extend .fz-12;
+        color: #ffffff;
+
+        border-radius: 5px;
+        border: solid 1px #e4e4e4;
+        background-color: #3861fb;
+        line-height: 23px;
+        @include media-breakpoint-up('m'){
+          min-width: 111px;
+        }
+      }
+    }
+  }
+}

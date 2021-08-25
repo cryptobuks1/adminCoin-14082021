@@ -23,6 +23,9 @@
     background-color: #fff;
     padding: 20px;
     margin-bottom: 22px;
+    .investment &{
+      margin-bottom: 41px;
+    }
     @include media-breakpoint-up('m'){
       padding-top: 32px;
       padding-left: 33px;

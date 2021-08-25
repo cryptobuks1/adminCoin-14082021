@@ -21,6 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
     <script src="assets/easydropdown-4/bundle/easydropdown.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
     <script src="js/app.js?v=<?php echo(time()) ?>"></script>
 </head>
 <body class="">
@@ -79,6 +83,7 @@
                     array(
                         'name' => 'Investment',
                         'icon' => 'images/menu-svg/Investment.svg',
+                        'href' => 'investment.php',
                     ),
                     array(
                         'name' => 'Commission',

@@ -2,4 +2,7 @@
   &-modal{
     background-color: rgba(0, 12, 68, 0.5);
   }
+  &-tooltip{
+    //@extend .investment__tooltip;
+  }
 }
